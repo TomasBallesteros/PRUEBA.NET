@@ -1,0 +1,46 @@
+﻿@model Persona
+@{
+    ViewData["Title"] = "Persona";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Nueva Persona
+    </div>
+    <div class="card-body">
+        <form asp-action="Guardar" asp-controller="Home" method="post">
+            <input asp-for="peId" type="hidden"/>
+
+            <div class="mb-2">
+                <label class="form-label">Nombres</label>
+                <input type="text" class="form-control form-control-sm" asp-for="peNombres"/>
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Apellidos</label>
+                <input type="text" class="form-control form-control-sm" asp-for="peApellidos" />
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Identificacion</label>
+                <input type="text" class="form-control form-control-sm" asp-for="peIdentificacion" />
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Email</label>
+                <input type="text" class="form-control form-control-sm" asp-for="peEmail"/>
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Tipo Identificación</label>
+                <input type="text" class="form-control form-control-sm" asp-for="peTipoIdentificacion" />
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Fecha Creación</label>
+                <input type="date" class="form-control form-control-sm" asp-for="peFechaCreacion" />
+            </div>
+
+            <button type="submit" class="btn btn-success btn-sm">Guardar</button>
+
+            <a asp-action="Index" asp-controller="Home" class="btn btn-warning btn-sm">Cancelar</a>
+        </form>
+        <hr/>
+    </div>
+</div>

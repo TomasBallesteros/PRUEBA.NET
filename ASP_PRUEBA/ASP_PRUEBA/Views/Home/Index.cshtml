@@ -1,0 +1,50 @@
+﻿@model List<Persona>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    
+</div>
+
+<div class="card">
+    <div class="card-header">
+        Lista de Personas
+    </div>
+    <div class="card-body">
+        <a asp-action="Persona" asp-controller="Home" class="btn btn-success btn-sm">Nueva Persona</a>
+        <hr/>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRES</th>
+                    <th>APELLIDOS</th>
+                    <th>IDENFITICACION</th>
+                    <th>EMAIL</th>
+                    <th>TIPO IDENTIFICACIÓN</th>
+                    <th>FECHA CREACION</th>
+                    <th>CODIGO PERSONA</th>
+                    <th>NOMBRE COMPLETO</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in Model){
+                    <tr>
+                        <td>@item.peId</td>
+                        <td>@item.peNombres</td>
+                        <td>@item.peApellidos</td>
+                        <td>@item.peIdentificacion</td>
+                        <td>@item.peEmail</td>
+                        <td>@item.peTipoIdentificacion</td>
+                        <td>@Convert.ToDateTime(@item.peFechaCreacion).ToString("yyyy-MM-dd")</td>
+                        <td>@item.peCodigoPersona</td>
+                        <td>@item.peNombreCompleto</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
